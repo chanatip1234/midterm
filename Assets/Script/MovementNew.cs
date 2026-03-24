@@ -1,26 +1,29 @@
 using UnityEngine;
 
-public class PenguinRunner : MonoBehaviour
+
+public class PenguinRunner : MonoBehaviour  
 {
+    
+
     [Header("Basic Movement")]
-    public float forwardSpeed = 12f;      // เพิ่มความเร็วปกติอีกนิดให้เกมสนุกขึ้น
+    public float forwardSpeed = 12f;      
     public float strafeSpeed = 15f;
     public float brakeSpeed = 1f;
 
     [Header("Pounce Settings")]
-    public float chargeRate = 120f;        // *** ปรับเพิ่ม: เพื่อให้ชาร์จเต็มไวขึ้นใน 1 วินาที
-    public float maxDashForce = 60f;      // *** ปรับเพิ่ม: ให้พุ่งแรงสะใจขึ้น
-    public float jumpUpForce = 8f;        // *** ปรับลด: ให้พุ่งไปข้างหน้ามากกว่าโดดขึ้นสูง (ฟีลกระโจน)
-    public float dashDecay = 2.5f;        // ให้แรงพุ่งค่อยๆ หมดไปแบบนุ่มนวล
-    public float maxChargeTime = 0.5f;    // *** ล็อคไว้ที่ 1 วินาทีตามที่ต้องการ
+    public float chargeRate = 120f;        
+    public float maxDashForce = 60f;      
+    public float jumpUpForce = 8f;        
+    public float dashDecay = 2.5f;        
+    public float maxChargeTime = 0.5f;    
 
     [Header("Ground Check")]
     public float groundCheckDistance = 0.3f;
     public LayerMask groundLayer;
 
     [Header("System")]
-    public float cooldownTime = 5.0f;     // คูลดาวน์ 5 วินาที
-    public float landingDelay = 8.0f;     // *** ปรับเพิ่ม: ต้องวิ่งบนพื้นสักพักถึงจะเริ่มชาร์จใหม่ได้
+    public float cooldownTime = 5.0f;     
+    public float landingDelay = 8.0f;     
 
     private float cooldownTimer = 0f;
     private float currentDashBonus = 0f;
@@ -35,18 +38,20 @@ public class PenguinRunner : MonoBehaviour
 
     private Rigidbody rb;
 
+    private Vector3 moveDirection = Vector3.forward;
+   
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        // ล็อคแกนทั้งหมดเพื่อความเสถียร
         anim = GetComponentInChildren<Animator>();
         rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
-        rb.linearDamping = 0.5f; // เพิ่มความหน่วงฟิสิกส์เล็กน้อย
+        rb.linearDamping = 0.5f; 
     }
 
     void Update()
     {
-        // --- 1. ระบบเช็คพื้น (ห้ามลบ) ---
+        
         isGrounded = Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.down, groundCheckDistance + 0.1f, groundLayer);
 
         if (isGrounded) timeOnGround += Time.deltaTime;
@@ -54,7 +59,7 @@ public class PenguinRunner : MonoBehaviour
 
         if (cooldownTimer > 0) cooldownTimer -= Time.deltaTime;
 
-        // --- 2. ระบบชาร์จและ Input (ห้ามลบ) ---
+        
         if (isGrounded && timeOnGround >= landingDelay && cooldownTimer <= 0 && Input.GetKeyDown(KeyCode.Space))
         {
             isCharging = true;
@@ -76,20 +81,20 @@ public class PenguinRunner : MonoBehaviour
 
         if (!isGrounded && isCharging) isCharging = false;
 
-        // --- 3. ส่วนการส่งค่าไปที่ Animator (เพิ่มต่อท้ายตรงนี้!) ---
+        
         if (anim != null)
         {
-            // ส่งความเร็วไปบอก Animator (ถ้าชาร์จอยู่ให้หยุดเดิน/วิ่ง)
+            
             float animSpeed = isCharging ? 0 : 1f;
             anim.SetFloat("Speed", animSpeed);
 
-            // ส่งสถานะชาร์จ
+            
             anim.SetBool("isCharging", isCharging);
 
-            // ส่งสถานะลอยตัว (ถ้าไม่ติดพื้น = True)
+            
             anim.SetBool("isPouncing", !isGrounded);
 
-            // ส่งความเร็วแนวตั้ง (ใช้สลับท่า Air/Fall)
+            
             anim.SetFloat("VerticalVelocity", rb.linearVelocity.y);
         }
     }
@@ -100,12 +105,18 @@ public class PenguinRunner : MonoBehaviour
         currentChargeTimer = 0f;
         cooldownTimer = cooldownTime;
 
-        // ใส่แรงพุ่ง (Forward + Up)
+        
         Vector3 pounceForce = (transform.forward * chargeAmount) + (Vector3.up * jumpUpForce);
         rb.AddForce(pounceForce, ForceMode.VelocityChange);
 
-        currentDashBonus = chargeAmount * 0.4f; // ให้ความเร็วต่อเนื่องหลังพุ่ง
+        currentDashBonus = chargeAmount * 0.4f; 
         timeOnGround = 0f;
+    }
+
+    public void ChangeDirection(Vector3 newDir)
+    {
+        
+        moveDirection = newDir.normalized;
     }
 
     void FixedUpdate()
@@ -118,11 +129,20 @@ public class PenguinRunner : MonoBehaviour
         currentDashBonus = Mathf.Lerp(currentDashBonus, 0, dashDecay * Time.fixedDeltaTime);
         float finalForwardSpeed = baseSpeed + currentDashBonus;
 
-        Vector3 vel = new Vector3(horizontalInput * strafeSpeed, rb.linearVelocity.y, finalForwardSpeed);
-        rb.linearVelocity = vel;
 
-        // เอียงตัวตอนเลี้ยว (Z Axis)
+        Vector3 forwardMove = moveDirection * finalForwardSpeed;
+        Vector3 sideDir = Vector3.Cross(Vector3.up, moveDirection);
+        Vector3 sideMove = sideDir * (horizontalInput * strafeSpeed);
+
+
+        Vector3 finalVelocity = forwardMove + sideMove;
+        finalVelocity.y = rb.linearVelocity.y;
+
+        rb.linearVelocity = finalVelocity;
+
+        
         float targetTilt = -horizontalInput * 20f;
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 0, targetTilt), Time.fixedDeltaTime * 10f);
+        Quaternion targetRotation = Quaternion.Euler(0, transform.eulerAngles.y, targetTilt);
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, transform.eulerAngles.y, targetTilt), Time.fixedDeltaTime * 10f);
     }
 }
