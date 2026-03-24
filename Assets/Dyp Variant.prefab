@@ -1,0 +1,134 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7765599926338853934
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5317147608393861, guid: 4290ce8b0eaa54942b193ab7f49c6bb3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 384.4779
+      objectReference: {fileID: 0}
+    - target: {fileID: 5317147608393861, guid: 4290ce8b0eaa54942b193ab7f49c6bb3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.258
+      objectReference: {fileID: 0}
+    - target: {fileID: 5317147608393861, guid: 4290ce8b0eaa54942b193ab7f49c6bb3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -192.40404
+      objectReference: {fileID: 0}
+    - target: {fileID: 5317147608393861, guid: 4290ce8b0eaa54942b193ab7f49c6bb3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5317147608393861, guid: 4290ce8b0eaa54942b193ab7f49c6bb3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5317147608393861, guid: 4290ce8b0eaa54942b193ab7f49c6bb3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5317147608393861, guid: 4290ce8b0eaa54942b193ab7f49c6bb3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5317147608393861, guid: 4290ce8b0eaa54942b193ab7f49c6bb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5317147608393861, guid: 4290ce8b0eaa54942b193ab7f49c6bb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5317147608393861, guid: 4290ce8b0eaa54942b193ab7f49c6bb3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 826067198591074319, guid: 4290ce8b0eaa54942b193ab7f49c6bb3,
+        type: 3}
+      propertyPath: m_Height
+      value: 2.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 826067198591074319, guid: 4290ce8b0eaa54942b193ab7f49c6bb3,
+        type: 3}
+      propertyPath: m_Radius
+      value: 0.5913361
+      objectReference: {fileID: 0}
+    - target: {fileID: 826067198591074319, guid: 4290ce8b0eaa54942b193ab7f49c6bb3,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.00999999
+      objectReference: {fileID: 0}
+    - target: {fileID: 826067198591074319, guid: 4290ce8b0eaa54942b193ab7f49c6bb3,
+        type: 3}
+      propertyPath: m_Center.z
+      value: 0.05078429
+      objectReference: {fileID: 0}
+    - target: {fileID: 1613708225417939188, guid: 4290ce8b0eaa54942b193ab7f49c6bb3,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1613708225417939188, guid: 4290ce8b0eaa54942b193ab7f49c6bb3,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2847102041374688063, guid: 4290ce8b0eaa54942b193ab7f49c6bb3,
+        type: 3}
+      propertyPath: m_Character
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 3911862475426650774, guid: 4290ce8b0eaa54942b193ab7f49c6bb3,
+        type: 3}
+      propertyPath: m_Name
+      value: Dyp Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 5554724194180349384, guid: 4290ce8b0eaa54942b193ab7f49c6bb3,
+        type: 3}
+      propertyPath: m_Character
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 406441392843560932, guid: 4290ce8b0eaa54942b193ab7f49c6bb3, type: 3}
+    - {fileID: 2342378794058303038, guid: 4290ce8b0eaa54942b193ab7f49c6bb3, type: 3}
+    - {fileID: 2847102041374688063, guid: 4290ce8b0eaa54942b193ab7f49c6bb3, type: 3}
+    - {fileID: 4886406336446666642, guid: 4290ce8b0eaa54942b193ab7f49c6bb3, type: 3}
+    - {fileID: 5554724194180349384, guid: 4290ce8b0eaa54942b193ab7f49c6bb3, type: 3}
+    - {fileID: 7969366017136526847, guid: 4290ce8b0eaa54942b193ab7f49c6bb3, type: 3}
+    - {fileID: 2708215936765478844, guid: 4290ce8b0eaa54942b193ab7f49c6bb3, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3911862475426650774, guid: 4290ce8b0eaa54942b193ab7f49c6bb3,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5176276623654124700}
+  m_SourcePrefab: {fileID: 100100000, guid: 4290ce8b0eaa54942b193ab7f49c6bb3, type: 3}
+--- !u!1 &6741125371670185656 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3911862475426650774, guid: 4290ce8b0eaa54942b193ab7f49c6bb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 7765599926338853934}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5176276623654124700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6741125371670185656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 332478a64387cae49a6f13d405a47eb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PenguinRunner
+  forwardSpeed: 15
+  brakeSpeed: 2
+  strafeSpeed: 10
+  maxSteerAngle: 20
+  cooldownTime: 2
