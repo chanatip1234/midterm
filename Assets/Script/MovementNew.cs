@@ -39,6 +39,8 @@ public class PenguinRunner : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1f;
+
         rb = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
         playerHealth = GetComponent<PlayerHealth>();
