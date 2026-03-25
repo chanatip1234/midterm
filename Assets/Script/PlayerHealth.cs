@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     private Animator anim;
     private bool isDead = false;
     public GameObject gameOverPanel;
+    public bool isStunned = false;
 
     void Start()
     {
@@ -24,27 +25,34 @@ public class PlayerHealth : MonoBehaviour
         UpdateHeartUI();
     }
 
-   
+
     public void TakeDamage(int damage)
     {
-        if (isDead) return;
+        if (isDead || isStunned) return; 
 
         currentHealth -= damage;
         UpdateHeartUI();
 
         if (currentHealth > 0)
         {
-            // เล่นท่า Hit (สะดุ้ง)
-            if (anim != null) anim.SetTrigger("Hit");
-            Debug.Log("Ouch! เลือดลด");
+            StartCoroutine(HitStunRoutine()); 
         }
         else
         {
             Die();
         }
     }
+    IEnumerator HitStunRoutine()
+    {
+        isStunned = true;
+        if (anim != null) anim.SetTrigger("Hit");
 
-    
+        yield return new WaitForSeconds(0.5f);
+
+        isStunned = false;
+    }
+
+
     public void Heal(int amount)
     {
         if (isDead) return;

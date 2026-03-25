@@ -35,11 +35,13 @@ public class PenguinRunner : MonoBehaviour
     private Animator anim;
     private Rigidbody rb;
     private Vector3 moveDirection = Vector3.forward;
+    private PlayerHealth playerHealth;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         anim = GetComponentInChildren<Animator>();
+        playerHealth = GetComponent<PlayerHealth>();
         rb.constraints = RigidbodyConstraints.FreezeRotation;
         rb.linearDamping = 0.5f;
         currentStamina = 1f;
@@ -47,10 +49,11 @@ public class PenguinRunner : MonoBehaviour
 
     void Update()
     {
-        
+        if (playerHealth != null && (playerHealth.isStunned)) return;
+
         isGrounded = Physics.Raycast(transform.position + Vector3.up * 0.1f, Vector3.down, groundCheckDistance + 0.1f, groundLayer);
 
-        
+
         if (isGrounded && !isCharging && currentStamina < 1f)
         {
             currentStamina += staminaRegenSpeed * Time.deltaTime;
@@ -122,6 +125,18 @@ public class PenguinRunner : MonoBehaviour
     void FixedUpdate()
     {
         if (rb == null) return;
+
+        if (playerHealth != null)
+        {
+            if (playerHealth.isStunned)
+            {          
+                rb.linearVelocity = new Vector3(0, rb.linearVelocity.y, 0);
+   
+                if (anim != null) anim.SetFloat("Speed", 0);
+
+                return; 
+            }
+        }
 
         float horizontalInput = Input.GetAxis("Horizontal");
         float baseSpeed = isCharging ? brakeSpeed : forwardSpeed;
