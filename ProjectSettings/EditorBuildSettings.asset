@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/midterm.unity
     guid: fbbd4bd736674f948a4a1ea4ff52ab51
   - enabled: 1
+    path: Assets/Scenes/midterm 2.unity
+    guid: e709d0f15c6f498439b422d355c63cce
+  - enabled: 1
     path: Assets/VictoryScene.unity
     guid: 8c5d8aea98635e9408a60de794ccd8f8
   - enabled: 1
