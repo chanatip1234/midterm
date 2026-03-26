@@ -11,6 +11,11 @@ public class VictoryMenu : MonoBehaviour
         Time.timeScale = 1f;
         StartCoroutine(LoadLevelRoutine("midterm 2"));
     }
+    public void LoadMainMenu()
+    {
+        Time.timeScale = 1f; 
+        SceneManager.LoadScene("MainMenu"); 
+    }
 
     public void PlayAgain()
     {
