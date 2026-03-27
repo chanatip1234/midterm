@@ -2195,8 +2195,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 0.56570613}
-  m_Center: {x: 0, y: 0, z: 0.21714689}
+  m_Size: {x: 1, y: 1, z: 0.8133994}
+  m_Center: {x: 0, y: 0, z: 0.09330027}
 --- !u!1 &244177024
 GameObject:
   m_ObjectHideFlags: 0
@@ -2926,8 +2926,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 0.56570613}
-  m_Center: {x: 0, y: 0, z: 0.21714689}
+  m_Size: {x: 1, y: 1, z: 0.7521983}
+  m_Center: {x: 0.000000001471342, y: 0, z: 0.11029818}
 --- !u!1001 &286774328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16962,8 +16962,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 0.56570613}
-  m_Center: {x: 0, y: 0, z: 0.21714689}
+  m_Size: {x: 1, y: 1, z: 0.79033387}
+  m_Center: {x: 0, y: 0, z: 0.10483295}
 --- !u!1 &1859446714 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 942503251625881016, guid: affe613d84fcf2249b76c35e2bc1ce22,
@@ -17128,7 +17128,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 168.2, y: 62.5}
+  m_AnchoredPosition: {x: 168.2, y: 92.6}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1914882069
@@ -18493,11 +18493,11 @@ RectTransform:
   - {fileID: 1170196677}
   m_Father: {fileID: 1351287298}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -365.7, y: -305.5}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -725, y: 64}
   m_SizeDelta: {x: 300, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &2037440323
 MonoBehaviour:
   m_ObjectHideFlags: 0
