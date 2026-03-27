@@ -12620,13 +12620,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1245009547}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -249.2, y: -0.74, z: 316.2}
-  m_LocalScale: {x: 30.362774, y: 6.304, z: 5.4227}
+  m_LocalRotation: {x: -0, y: -0.70535403, z: -0, w: 0.7088552}
+  m_LocalPosition: {x: -238.48, y: 0.1, z: 253.85}
+  m_LocalScale: {x: 62.83576, y: 13.046127, z: 11.222278}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -89.716, z: 0}
 --- !u!4 &1255672525 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6202937251133965646, guid: 3d99584154e79fc478391f2ad692c295,
@@ -13382,12 +13382,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 0.5
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
